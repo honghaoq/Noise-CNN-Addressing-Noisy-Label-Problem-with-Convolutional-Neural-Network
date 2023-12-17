@@ -1,4 +1,4 @@
-# Addressing-Noisy-Label-Problem-with-Convolutional-Neural-Network
+# Addressing Noisy Label Problem with Convolutional Neural Networks
 
 Data collected in real world setting are often corrupted with incorrect labels, such noise in training dataset can lead to significant performance degrade for models' predictive capability on testset if trained with noisy data. 
 
