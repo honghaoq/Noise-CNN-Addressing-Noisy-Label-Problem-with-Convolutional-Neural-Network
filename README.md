@@ -1,5 +1,9 @@
 # Addressing-Noisy-Label-Problem-with-Convolutional-Neural-Network
+
 Data collected in real world setting are often corrupted with incorrect labels, such noise in training dataset can lead to significant performance degrade for models' predictive capability on testset if trained with noisy data. 
+
 To address model performance degrade issue on noisy labels problem, we  propose a new simple yet effective method - Iterative Cross Majority Learning (ICML), which is to train multiple convolutional neural networks independently on noisy data, and update data label based on majority vote across predicted outputs from the trained CNN learners. We then repeat the process in multiple stages iteratively, and use the last stage trained CNNs to perform ensemble learning for making the final test set prediction. 
+
 Our experiments on MNIST dataset shows that the proposed ICML method is able to achieve near state-of-the-art result of over 97% prediction accuracy on test set after trained on data with noise level as high as 70%, and recovered over 90% of the noisy labels correctly. Moreover, we proposed a variant of the majority voting algorithm, by introducing random labeling for disagreed predictions at early stages when training multiple CNN learners (i.e.  Iterative Cross Learning - Random, ICL-R), and then apply ICML method in later training stages. We find that such combination provides even better result and converge faster than previous approaches. We also analyzed the reasons of the effectiveness of this method in the end of this paper. 
+
 Besides the effectiveness of proposed approach in handling noisy label training problem, given the algorithm's unsupervised nature, it could also be used for label generation given a small portion of true label data (i.e. create random labels for unlabeled data and perform ICML/ICL-R method to approximate/recover true labels).
